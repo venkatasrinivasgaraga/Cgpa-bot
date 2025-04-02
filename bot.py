@@ -1,6 +1,6 @@
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup from telegram.ext import ApplicationBuilder, CallbackQueryHandler, CommandHandler, ContextTypes import os
 
-ADMIN_IDS = [123456789]  # Replace with actual admin user IDs button_text = "Click me" cgpa_message = "Your CGPA is 0.0"
+ADMIN_IDS = [1074804932]  # Replace with actual admin user IDs button_text = "Click me" cgpa_message = "Your CGPA is 0.0"
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE): keyboard = [[InlineKeyboardButton(button_text, callback_data="button_click")]] reply_markup = InlineKeyboardMarkup(keyboard) await update.message.reply_text("Press the button:", reply_markup=reply_markup)
 
@@ -32,7 +32,7 @@ else:
 
 async def get_cgpa(update: Update, context: ContextTypes.DEFAULT_TYPE): await update.message.reply_text(cgpa_message)
 
-def main(): app = ApplicationBuilder().token(os.getenv("TELEGRAM_BOT_TOKEN")).build()
+def main(): app = ApplicationBuilder().token(os.getenv("7841123141:AAEE-zU5yU5q5Kp2RGH-zWhU2-QLM5_ZrgQ")).build()
 
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("setbutton", set_button))
